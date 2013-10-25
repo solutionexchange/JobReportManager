@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="Rqlconnector.js"></script>
+	<script type="text/javascript" src="rqlconnector/Rqlconnector.js"></script>
 	<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 	<script type="text/javascript" src="js/date.js"></script>
 	<script type="text/javascript">
@@ -63,6 +63,11 @@
 					{
 						Headline = match[1];
 						PageID = match[2];
+					}
+					else
+					{
+						Headline = HeadlinePageID;
+						PageID = '-1';
 					}
 
 					StartTimeStatus = $(this).attr('col2value');
