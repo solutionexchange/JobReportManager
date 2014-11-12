@@ -8,6 +8,7 @@
 {
     public string SendRql(string Rql)
     {
+    	HttpContext.Current.Response.ContentType = "text/xml; charset=utf-8";
         return SendRqlToWebService(Rql);
     }
 
@@ -53,7 +54,7 @@
     {
         if (HttpContext.Current.Session["WebServiceUrl"] == null)
         {
-            HttpContext.Current.Session["WebServiceUrl"] = HttpContext.Current.Request.Url.Scheme + ":" + "//" + HttpContext.Current.Request.Url.Authority + "/cms/WebService/RqlWebService.svc";
+            HttpContext.Current.Session["WebServiceUrl"] = HttpContext.Current.Request.Url.Scheme + ":" + "//" + "localhost" + "/cms/WebService/RqlWebService.svc";
             Uri WebServiceUri = new Uri(HttpContext.Current.Session["WebServiceUrl"].ToString());
 
 			string Rql = "";
